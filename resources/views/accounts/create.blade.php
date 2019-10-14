@@ -3,9 +3,9 @@
 @section('main')
 <div class="row">
  <div class="col-sm-8 offset-sm-2">
-    <h1 class="display-3">Insert Candidate</h1>
+    <h1 class="display-3">Create New Account</h1>
     <div>
-        <a style="margin: 19px;" href="{{ route('candidates.create')}}" class="btn btn-primary">New Candidate</a>
+        <a style="margin: 19px;" href="{{ route('accounts.create')}}" class="btn btn-primary">New Account</a>
     </div>
   <div>
     @if ($errors->any())
@@ -17,7 +17,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('candidates.store') }}">
+      <form method="post" action="{{ route('accounts.store') }}">
           @csrf
           <div class="form-group">
               <label for="first_name">First Name:</label>
@@ -38,18 +38,11 @@
             <input type="password" class="form-control" name="password"/>
         </div>
 
-          <div class="form-group">
-              <label for="city">City:</label>
-              <input type="text" class="form-control" name="city"/>
-          </div>
-          <div class="form-group">
-              <label for="country">Country:</label>
-              <input type="text" class="form-control" name="country"/>
-          </div>
-          <div class="form-group">
-              <label for="job_title">Job Title:</label>
-              <input type="text" class="form-control" name="job_title"/>
-          </div>
+        <div class="form-group">
+            <label for="password">Confirm Password:</label>
+            <input type="password" class="form-control" name="password_confirmation" value={{ $account->password_confirmation }}/>
+        </div>
+
           <button type="submit" class="btn btn-primary-outline">Submit</button>
       </form>
   </div>
