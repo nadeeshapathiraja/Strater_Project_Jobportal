@@ -11,6 +11,7 @@
           <td>First Name</td>
           <td>Last Name</td>
           <td>Email</td>
+          <td>Password</td>
           <td>Job Title</td>
           <td>City</td>
           <td>Country</td>
@@ -24,6 +25,7 @@
             <td>{{$candidate->first_name}}</td>
             <td>{{$candidate->last_name}}</td>
             <td>{{$candidate->email}}</td>
+            <td>{{$candidate->password}}</td>
             <td>{{$candidate->job_title}}</td>
             <td>{{$candidate->city}}</td>
             <td>{{$candidate->country}}</td>

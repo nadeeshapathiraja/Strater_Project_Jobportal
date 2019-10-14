@@ -34,6 +34,11 @@
                 <input type="text" class="form-control" name="email" value={{ $candidate->email }} />
             </div>
             <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password"/>
+            </div>
+
+            <div class="form-group">
                 <label for="city">City:</label>
                 <input type="text" class="form-control" name="city" value={{ $candidate->city }} />
             </div>

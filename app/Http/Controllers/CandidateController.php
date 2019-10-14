@@ -40,6 +40,7 @@ class CandidateController extends Controller
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
             'email' => $request->get('email'),
+            'password' => $request->get('password'),
             'job_title' => $request->get('job_title'),
             'city' => $request->get('city'),
             'country' => $request->get('country')
