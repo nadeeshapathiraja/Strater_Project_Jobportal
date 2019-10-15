@@ -38,10 +38,10 @@
             <input type="password" class="form-control" name="password"/>
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="password">Confirm Password:</label>
             <input type="password" class="form-control" name="password_confirmation" value={{ $account->password_confirmation }}/>
-        </div>
+        </div> --}}
 
           <button type="submit" class="btn btn-primary-outline">Submit</button>
       </form>

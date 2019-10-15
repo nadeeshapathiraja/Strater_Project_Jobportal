@@ -32,8 +32,8 @@ class AccountController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
-            'password' => 'required|min:6|confirmed',
-            'password_confirmation' => 'required|min:6'
+            'password' => 'required',//|min:6|confirmed',
+            //'password_confirmation' => 'required|min:6'
         ]);
 
         $account = new account([
@@ -94,8 +94,8 @@ class AccountController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
-            'password' => 'required|min:6|confirmed',
-            'password_confirmation' => 'required|min:6'
+            'password' => 'required',//|min:6|confirmed
+            // 'password_confirmation' => 'required|min:6'
         ]);
 
         $account = account::find($account_id);

@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col-sm-8 offset-sm-2">
-        <h1 class="display-3">Update Candidate</h1>
+        <h1 class="display-3">Update Account</h1>
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -37,10 +37,10 @@
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" name="password" value={{ $account->password }}/>
             </div>
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="password">Confirm Password:</label>
                 <input type="password" class="form-control" name="password_confirmation" value={{ $account->password_confirmation }}/>
-            </div>
+            </div> --}}
 
             
             <button type="submit" class="btn btn-primary">Update</button>
