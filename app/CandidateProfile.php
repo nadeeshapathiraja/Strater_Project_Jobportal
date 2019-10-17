@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class candidateprofile extends Model
 {
-    //protected $primaryKey = 'candidate_profile_id';
+    protected $primaryKey = 'candidate_profile_id';
 
     protected $fillable = [
 
