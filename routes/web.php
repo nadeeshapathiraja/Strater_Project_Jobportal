@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('accounts', 'AccountController');
-Route::resource('candidateprofiles', 'CandidateProfileController');
+Route::resource('candidateprofiles', 'CandidateprofileController');
+Route::resource('candidateeducations', 'CandidateeducationController');
 
  

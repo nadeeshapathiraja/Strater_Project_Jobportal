@@ -11,7 +11,7 @@ class candidateeducation extends Model
 
     protected $fillable = [
 
-        'candidate_profile_id',
+        //'candidate_profile_id',
         'degree',
         'school_type',
         'school_name',

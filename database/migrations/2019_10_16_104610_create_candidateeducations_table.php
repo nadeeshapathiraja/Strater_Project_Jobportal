@@ -16,7 +16,8 @@ class CreateCandidateeducationsTable extends Migration
         Schema::create('candidateeducations', function (Blueprint $table) {
 
             $table->increments('candidate_educ_id')->zerofill();
-            $table->integer('candidate_profile_id')->zerofill();
+            $table->timestamps();
+            //$table->integer('candidate_profile_id');
             $table->string('degree');
             $table->string('school_type');
             $table->string('school_name');
