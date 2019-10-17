@@ -4,12 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CandidateProfile extends Model
+class candidateprofile extends Model
 {
+    //protected $primaryKey = 'candidate_profile_id';
+
     protected $fillable = [
 
-        'account_id',
-        'profile_image',
+       // 'account_id',
+        'image',
         'firstname',
         'lastname',
         'mobile',
@@ -20,7 +22,6 @@ class CandidateProfile extends Model
         'state',
         'country',
         'zipcode',
-        'profile_picture',
         'fresh_graduate',
         'nationality',
         'country_residingin',

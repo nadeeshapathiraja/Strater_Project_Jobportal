@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCandidateProfilesTable extends Migration
+class CreateCandidateprofilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateCandidateProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('candidate_profiles', function (Blueprint $table) {
-            
-            $table->increments('candidate_profile_id')->zerofill();
-            $table->integer('account_id');
-            $table->string('profile_image')->nullable();
+        Schema::create('candidateprofiles', function (Blueprint $table) {
+
+            $table->increments('candidate_profile_id');
+            $table->timestamps();
+            //$table->integer('account_id');
+            $table->string('image')->nullable();
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('mobile');
+            $table->integer('mobile');
             $table->string('telephone');
             $table->string('address1');
             $table->string('address2');
@@ -28,7 +29,6 @@ class CreateCandidateProfilesTable extends Migration
             $table->string('state');
             $table->string('country');
             $table->string('zipcode');
-            $table->string('profile_picture');
             $table->integer('fresh_graduate');
             $table->string('nationality');
             $table->string('country_residingin');
@@ -51,6 +51,7 @@ class CreateCandidateProfilesTable extends Migration
             $table->string('acc_name');
             $table->string('acc_no');
             $table->string('bank');
+            
         });
     }
 
@@ -61,6 +62,6 @@ class CreateCandidateProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candidate_profiles');
+        Schema::dropIfExists('candidateprofiles');
     }
 }
