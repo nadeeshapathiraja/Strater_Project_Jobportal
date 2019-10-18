@@ -62,20 +62,43 @@ class CandidateeducationController extends Controller
     }
 
 
-    public function edit(candidateeducation $candidateeducation)
+    public function edit($candidate_educ_id)
     {
-        //
+        $candidateeducation = candidateeducation::find($candidate_educ_id);
+        return view('candidateeducations.edit', compact('candidateeducation'));
     }
 
 
-    public function update(Request $request, candidateeducation $candidateeducation)
+    public function update(Request $request,$candidate_educ_id)
     {
-        //
+        $candidateeducation = candidateeducation::find($candidate_educ_id);
+
+        $candidateeducation -> degree = $request->get('degree');
+        $candidateeducation -> school_type = $request->get('school_type');
+        $candidateeducation -> school_name = $request->get('school_name');
+        $candidateeducation -> city = $request->get('city');
+        $candidateeducation -> country = $request->get('country');
+        $candidateeducation -> state = $request->get('state');
+        $candidateeducation -> enrolldate = $request->get('enrolldate');
+        $candidateeducation -> still_studying = $request->get('still_studying');
+        $candidateeducation -> grad_date = $request->get('grad_date');
+        $candidateeducation -> exp_graddate = $request->get('exp_graddate');
+        $candidateeducation -> is_graduated = $request->get('is_graduated');
+        $candidateeducation -> lastenrollyear = $request->get('lastenrollyear');
+        $candidateeducation -> future_study = $request->get('future_study');
+        $candidateeducation -> field_of_study = $request->get('field_of_study');
+
+        $candidateeducation->save();
+
+        return redirect('/candidateeducations')->with('success', 'Update Successfull!');
     }
 
 
-    public function destroy(candidateeducation $candidateeducation)
+    public function destroy($candidate_educ_id)
     {
-        //
+        $candidateeducation = candidateeducation::find($candidate_educ_id);
+        $candidateeducation->delete();
+
+        return redirect('/candidateeducations')->with('success', 'Account Deleted!');
     }
 }

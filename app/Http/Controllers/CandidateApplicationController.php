@@ -56,7 +56,7 @@ class CandidateApplicationController extends Controller
     }
 
     
-    public function update(Request $request, candidate_application $candidate_application)
+    public function update(Request $request, $candidate_application_id)
     {
         //
     }
