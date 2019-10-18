@@ -29,5 +29,6 @@ Route::resource('candidateeducations', 'CandidateeducationController');
 Route::resource('candidatepreferences', 'CandidatepreferenceController');
 Route::resource('candidateworkexps', 'candidateworkexpController');
 Route::resource('candidate_applications', 'CandidateApplicationController');
+Route::resource('candidate_languages', 'CandidateLanguageController');
 
  

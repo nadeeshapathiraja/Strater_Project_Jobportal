@@ -32,7 +32,7 @@
 
           <div class="form-group">
               <label for="school_name">School Name:</label>
-              <input type="school_name" class="form-control" name="school_name"/>
+              <input type="text" class="form-control" name="school_name"/>
           </div>
 
           <div class="form-group">
