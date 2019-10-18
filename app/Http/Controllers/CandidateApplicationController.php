@@ -49,9 +49,10 @@ class CandidateApplicationController extends Controller
     }
 
     
-    public function edit(candidate_application $candidate_application)
+    public function edit($candidate_application_id)
     {
-        //
+        $candidate_application = candidate_application::find($candidate_application_id);
+        return view('candidate_applications.edit', compact('candidate_application'));
     }
 
     
@@ -61,8 +62,11 @@ class CandidateApplicationController extends Controller
     }
 
     
-    public function destroy(candidate_application $candidate_application)
+    public function destroy($candidate_application_id)
     {
-        //
+        $candidate_application = candidate_application::find($candidate_application_id);
+        $candidate_application->delete();
+
+        return redirect('/candidate_applications')->with('success', 'Application Deleted!');
     }
 }
