@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\candidateworkexp;
 use Illuminate\Http\Request;
 
 class CandidateworkexpController extends Controller

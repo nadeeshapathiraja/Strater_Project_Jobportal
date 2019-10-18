@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class candidateworkexps extends Model
+class candidateworkexp extends Model
 {
 
     protected $primaryKey = 'candidate_workexp_id';

@@ -16,6 +16,7 @@ class CreateCandidateworkexpsTable extends Migration
         Schema::create('candidateworkexps', function (Blueprint $table) {
 
             $table->increments('candidate_workexp_id');
+            $table->timestamps();
             //$table->integer('candidate_profile_id');
             $table->string('employername');
             $table->string('industry');
