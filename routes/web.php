@@ -18,10 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//account routes
 Route::resource('accounts', 'AccountController');
+
+
+//candidate routes
 Route::resource('candidateprofiles', 'CandidateprofileController');
 Route::resource('candidateeducations', 'CandidateeducationController');
 Route::resource('candidatepreferences', 'CandidatepreferenceController');
 Route::resource('candidateworkexps', 'candidateworkexpController');
+Route::resource('candidate_applications', 'CandidateApplicationController');
 
  

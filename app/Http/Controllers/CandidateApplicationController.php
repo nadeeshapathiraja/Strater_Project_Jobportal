@@ -7,77 +7,60 @@ use Illuminate\Http\Request;
 
 class CandidateApplicationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+       // $candidate_applications = candidate_application::all();
+
+        return view('candidate_applications.index', compact('candidate_applications'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+        ]);
+
+        $candidate_application = new candidate_application([
+            // 'status' => $request->get('status'),
+            // 'emp_status' => $request->get('emp_status'),
+            // 'interview_status' => $request->get('interview_status'),
+            // 'final_status' => $request->get('final_status'),
+            'emp_action_by' => $request->get('emp_action_by'),
+            'emp_action_at' => $request->get('emp_action_at'),
+            'cand_action_at' => $request->get('cand_action_at'),
+            
+        ]);
+        $candidate_application->save();
+        return redirect('/candidate_applications')->with('success', 'Account Create Successfuly');
+    }
+    
+
+    public function create(Request $request)
+    {
+        return view('candidate_applications.create');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\candidate_application  $candidate_application
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(candidate_application $candidate_application)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\candidate_application  $candidate_application
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(candidate_application $candidate_application)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\candidate_application  $candidate_application
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, candidate_application $candidate_application)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\candidate_application  $candidate_application
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(candidate_application $candidate_application)
     {
         //
