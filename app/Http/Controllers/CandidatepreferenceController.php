@@ -52,20 +52,38 @@ class CandidatepreferenceController extends Controller
     }
 
     
-    public function edit(candidatepreference $candidatepreference)
+    public function edit($candidate_preference_id)
     {
-        //
+        $candidatepreference = candidatepreference::find($candidate_preference_id);
+        return view('candidatepreferences.edit', compact('candidatepreference'));
     }
 
     
-    public function update(Request $request, candidatepreference $candidatepreference)
+    public function update(Request $request, $candidate_preference_id)
     {
-        //
+        $request->validate([
+            
+        ]);
+
+        $candidatepreference = candidatepreference::find($candidate_preference_id);
+        
+        $candidatepreference->specialization =  $request->get('specialization');
+        $candidatepreference->location_country = $request->get('location_country');
+        $candidatepreference->location_state = $request->get('location_state');
+        $candidatepreference->salary_currency = $request->get('salary_currency');
+        $candidatepreference->salary_amount = $request->get('salary_amount');
+
+        $candidatepreference->save();
+
+        return redirect('/candidatepreferences')->with('success', 'Update Successfull!');
     }
 
     
-    public function destroy(candidatepreference $candidatepreference)
+    public function destroy($candidate_preference_id)
     {
-        //
+        $candidatepreference = candidatepreference::find($candidate_preference_id);
+        $candidatepreference->delete();
+
+        return redirect('/candidatepreferences')->with('success', 'Account Deleted!');
     }
 }

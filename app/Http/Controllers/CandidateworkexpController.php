@@ -60,22 +60,48 @@ class CandidateworkexpController extends Controller
         //
     }
 
-    
-    public function edit(candidateworkexp $candidateworkexp)
+   
+    public function edit($candidate_workexp_id)
     {
-        //
+        $candidateworkexp = candidateworkexp::find($candidate_workexp_id);
+        return view('candidateworkexps.edit', compact('candidateworkexp'));
     }
 
     
-    public function update(Request $request, candidateworkexp $candidateworkexp)
+    public function update(Request $request, $candidate_workexp_id)
     {
-        //
+        $request->validate([
+            'employername' => 'required',
+            'industry' => 'required',
+            'position' => 'required',
+            'salary' => 'required',
+        ]);
+
+        $candidateworkexp = candidateworkexp::find($candidate_workexp_id);
+
+        $candidateworkexp->employername =  $request->get('employername');
+        $candidateworkexp->industry = $request->get('industry');
+        $candidateworkexp->city = $request->get('city');
+        $candidateworkexp->country = $request->get('country');
+        $candidateworkexp->state =  $request->get('state');
+        $candidateworkexp->position = $request->get('position');
+        $candidateworkexp->start_date = $request->get('start_date');
+        $candidateworkexp->end_date = $request->get('end_date');
+        $candidateworkexp->still_working = $request->get('still_working');
+        $candidateworkexp->salary = $request->get('salary');
+
+        $candidateworkexp->save();
+
+        return redirect('/candidateworkexps')->with('success', 'Update Successfull!');
     }
 
     
-    public function destroy(candidateworkexp $candidateworkexp)
+    public function destroy($candidate_workexp_id)
     {
-        //
+        $candidateworkexp = candidateworkexp::find($candidate_workexp_id);
+        $candidateworkexp->delete();
+
+        return redirect('/candidateworkexps')->with('success', 'Account Deleted!');
     }
 
 }
