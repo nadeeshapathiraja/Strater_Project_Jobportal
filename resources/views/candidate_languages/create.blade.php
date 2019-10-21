@@ -1,4 +1,4 @@
-@extends('base')
+@extends('Common.base')
 
 @section('main')
 <div class="row">
@@ -45,7 +45,7 @@
           <button type="submit" class="btn btn-primary-outline">Submit</button>
       </form>
   </div>
-</div>
+  </div>
 </div>
 @endsection
 

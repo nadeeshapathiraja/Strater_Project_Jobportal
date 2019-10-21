@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //account routes
-Route::resource('accounts', 'AccountController');
+Route::get('accounts', 'AccountController@index');
 
 
 //candidate routes
@@ -30,5 +30,7 @@ Route::resource('candidatepreferences', 'CandidatepreferenceController');
 Route::resource('candidateworkexps', 'candidateworkexpController');
 Route::resource('candidate_applications', 'CandidateApplicationController');
 Route::resource('candidate_languages', 'CandidateLanguageController');
+Route::get('candidate_education', 'CandidateeducationController@index');
+
 
  
