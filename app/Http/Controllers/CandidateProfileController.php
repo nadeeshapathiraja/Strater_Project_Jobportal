@@ -8,7 +8,7 @@ use Validator,Redirect,Response,File;
 
 class CandidateprofileController extends Controller
 {
-    
+
     public function index()
     {
         //$candidateprofiles = candidateprofile::all();
@@ -18,14 +18,14 @@ class CandidateprofileController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-             'image' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+             //'image' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
              'firstname' => 'required',
              'lastname' => 'required',
              'acc_name' => 'required',
              'acc_no' => 'required',
              'bank' => 'required',
          ]);
-    
+
     $image = $request->file('image');
 
     $candidateprofile = new candidateprofile([
@@ -64,14 +64,14 @@ class CandidateprofileController extends Controller
         'acc_name' => $request->get('acc_name'),
         'acc_no' => $request->get('acc_no'),
         'bank' => $request->get('bank'),
-        
+
     ]);
 
     $candidateprofile->save();
 
-    return redirect('/candidateprofiles')->with('success', 'Account Create Successfuly');
+    return redirect('/candidateprofiles')->with('success');
 }
-    
+
     public function show(candidateprofile $candidateprofile)
     {
         //
@@ -82,14 +82,14 @@ class CandidateprofileController extends Controller
         return view('candidateprofiles/create');
     }
 
-    
+
     public function edit($candidate_profile_id)
     {
         $candidateprofile = candidateprofile::find($candidate_profile_id);
         return view('candidateprofiles.edit', compact('candidateprofile'));
     }
 
-    
+
     public function update(Request $request, $candidate_profile_id)
     {
         $request->validate([
@@ -139,16 +139,16 @@ class CandidateprofileController extends Controller
 
          $candidateprofile->save();
 
-        return redirect('/candidateprofiles')->with('success', 'Candidate Update Successfull!');
+        return redirect('/candidateprofiles')->with('success');
 
     }
 
-    
+
     public function destroy($candidate_profile_id)
     {
         $candidateprofile = account::find($candidate_profile_id);
         $candidateprofile->delete();
 
-        return redirect('/candidateprofiles')->with('success', 'Candidate Account Deleted!');
+        return redirect('/candidateprofiles')->with('success');
     }
 }

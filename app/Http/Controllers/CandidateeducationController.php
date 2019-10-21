@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CandidateeducationController extends Controller
 {
-    
+
     public function index()
     {
         //$candidateprofiles = candidateprofile::all();
@@ -15,7 +15,7 @@ class CandidateeducationController extends Controller
 
     }
 
-    
+
 
     public function store(Request $request)
     {
@@ -28,7 +28,7 @@ class CandidateeducationController extends Controller
         ]);
 
         $candidateeducation = new candidateeducation([
-            
+
             //'candidate_profile_id' => $request->get('candidate_profile_id'),
             'degree' => $request->get('degree'),
             'school_type' => $request->get('school_type'),
@@ -44,10 +44,10 @@ class CandidateeducationController extends Controller
             'lastenrollyear' => $request->get('lastenrollyear'),
             'future_study' => $request->get('future_study'),
             'field_of_study' => $request->get('field_of_study'),
-            
+
         ]);
         $candidateeducation->save();
-        return redirect('/candidateeducations')->with('success', 'Account Create Successfuly');
+        return redirect('/candidateprofiles')->with('success');
     }
 
     public function create(Request $request)
@@ -90,7 +90,7 @@ class CandidateeducationController extends Controller
 
         $candidateeducation->save();
 
-        return redirect('/candidateeducations')->with('success', 'Update Successfull!');
+        return redirect('/candidateeducations')->with('success');
     }
 
 
@@ -99,6 +99,6 @@ class CandidateeducationController extends Controller
         $candidateeducation = candidateeducation::find($candidate_educ_id);
         $candidateeducation->delete();
 
-        return redirect('/candidateeducations')->with('success', 'Account Deleted!');
+        return redirect('/candidateeducations')->with('success');
     }
 }

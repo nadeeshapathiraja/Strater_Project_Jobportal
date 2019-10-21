@@ -9,8 +9,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../../css/base.css">
+
 	</head>
 	<body>
 
@@ -25,163 +26,98 @@
 
 			{{-- Content --}}
 			<div class="container" style="margin-top: 50px;">
-				
+
 				<div class="py-4">
 						@yield('main')
 				</div>
 
 			</div>
-	
-			{{-- Footer --}}
 
-			<footer class="container-fluid page-footer font-small unique-color-dark">
 
-				<div style="background-color: #6351ce;">
-					
-			
-						<!-- Grid row-->
-						<div class="row py-4 d-flex align-items-center">
-			
-							<!-- Grid column -->
-							<div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-								<h6 class="mb-0">Get connected with us on social networks!</h6>
+            {{-- Footer --}}
+            <div class="container-fluid">
+                <footer>
+					<div class="container">
+					  <div class="row">
+
+						<div class="col-lg-4 col-md-6">
+						  <h3>Site Map</h3>
+						  <ul class="list-unstyled three-column">
+							<li>Home</li>
+							<li>Services</li>
+							<li>About</li>
+							<li>Code</li>
+							<li>Design</li>
+							<li>Host</li>
+							<li>Contact</li>
+							<li>Company</li>
+						  </ul>
+						  <ul class="list-unstyled socila-list">
+							<li><img src="http://placehold.it/48x48" alt="" /></li>
+							<li><img src="http://placehold.it/48x48" alt="" /></li>
+							<li><img src="http://placehold.it/48x48" alt="" /></li>
+							<li><img src="http://placehold.it/48x48" alt="" /></li>
+							<li><img src="http://placehold.it/48x48" alt="" /></li>
+							<li><img src="http://placehold.it/48x48" alt="" /></li>
+						  </ul>
+						</div>
+
+						<div class="col-lg-4 col-md-6">
+						  <h3>latest Articles</h3>
+						  <div class="media">
+							<a href="#" class="pull-left">
+							  <img src="http://placehold.it/64x64" alt="" class="media-object" />
+							</a>
+							<div class="media-body">
+							  <h4 class="media-heading">Programming</h4>
+							  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 							</div>
-							<!-- End Grid column -->
-			
-							<!-- Grid column -->
-							<div class="col-md-6 col-lg-7 text-center text-md-right">
-					
-								<!-- Facebook -->
-								<a class="fb-ic">
-								<i class="fab fa-facebook-f white-text mr-4"> </i>
-								</a>
-								<!-- Twitter -->
-								<a class="tw-ic">
-								<i class="fab fa-twitter white-text mr-4"> </i>
-								</a>
-								<!-- Google +-->
-								<a class="gplus-ic">
-								<i class="fab fa-google-plus-g white-text mr-4"> </i>
-								</a>
-								<!--Linkedin -->
-								<a class="li-ic">
-								<i class="fab fa-linkedin-in white-text mr-4"> </i>
-								</a>
-								<!--Instagram-->
-								<a class="ins-ic">
-								<i class="fab fa-instagram white-text"> </i>
-								</a>
-					
+						  </div>
+
+						  <div class="media">
+							<a href="#" class="pull-left">
+							  <img src="http://placehold.it/64x64" alt="" class="media-object" />
+							</a>
+							<div class="media-body">
+							  <h4 class="media-heading">Coding</h4>
+							  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 							</div>
-							<!--  End Grid column -->
-			
+						  </div>
+
+						  <div class="media">
+							<a href="#" class="pull-left">
+							  <img src="http://placehold.it/64x64" alt="" class="media-object" />
+							</a>
+							<div class="media-body">
+							  <h4 class="media-heading">Web Sesign</h4>
+							  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							</div>
+						  </div>
+
 						</div>
-						<!-- End Grid row-->
-			
-					
-				</div>
-			
-				<!-- Footer Links -->
-				<div class="text-center text-md-left mt-5">
-			
-					<!-- Grid row -->
-					<div class="row mt-3">
-			
-						<!-- Grid column -->
-						<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-			
-							<!-- Content -->
-							<h6 class="text-uppercase font-weight-bold">Company name</h6>
-							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-							<p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-								consectetur
-								adipisicing elit.</p>
-					
+
+						<div class="col-lg-4">
+						  <h3>Our Work</h3>
+						  <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
+						  <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
+						  <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
+						  <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
 						</div>
-						<!-- Grid column -->
-			
-						<!-- Grid column -->
-						<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-					
-							<!-- Links -->
-							<h6 class="text-uppercase font-weight-bold">Products</h6>
-							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-							<p>
-								<a href="#!">MDBootstrap</a>
-							</p>
-							<p>
-								<a href="#!">MDWordPress</a>
-							</p>
-							<p>
-								<a href="#!">BrandFlow</a>
-							</p>
-							<p>
-								<a href="#!">Bootstrap Angular</a>
-							</p>
-			
-						</div>
-						<!-- Grid column -->
-				
-						<!-- Grid column -->
-						<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-			
-							<!-- Links -->
-							<h6 class="text-uppercase font-weight-bold">Useful links</h6>
-							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-							<p>
-								<a href="#!">Your Account</a>
-							</p>
-							<p>
-								<a href="#!">Become an Affiliate</a>
-							</p>
-							<p>
-								<a href="#!">Shipping Rates</a>
-							</p>
-							<p>
-								<a href="#!">Help</a>
-							</p>
-			
-						</div>
-						<!-- Grid column -->
-				
-						<!-- Grid column -->
-						<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-			
-							<!-- Links -->
-							<h6 class="text-uppercase font-weight-bold">Contact</h6>
-							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-							<p>
-								<i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-							<p>
-								<i class="fas fa-envelope mr-3"></i> info@example.com</p>
-							<p>
-								<i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-							<p>
-								<i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-					
-						</div>
-						<!-- Grid column -->
-			
+
+					  </div>
 					</div>
-					<!-- Grid row -->
-			
-				</div>
-				<!-- Footer Links -->
-			
-				<!-- Copyright -->
-				<div class="footer-copyright text-center py-3">© 2018 Copyright:
-					<a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-				</div>
-				<!-- Copyright -->
-			
-			</footer>
-		<!-- End Footer -->
-	
-			
+					<div class="copyright text-center">
+					  Copyright &copy; 2017 <span>Your Template Name</span>
+					</div>
+				</footer>
+            </div>
+
+
+
 		</div>
 		{{-- End Page --}}
 
-		
+
 
 	</body>
 </html>
