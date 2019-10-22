@@ -22,16 +22,21 @@ class AccountController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
-            'password' => 'required',//|min:6|confirmed',
-            //'password_confirmation' => 'required|min:6'
+            'password' => 'required|confirmed|min:6',
         ]);
+
+        $validator = Validator::make($request->all(), []);
+
+        $validator->sometimes('email', 'unique:users,email', function ($input) {
+            return $input->email !== Auth::user()->email;
+        });
 
         $account = new account([
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
             'email' => $request->get('email'),
             'password' => $request->get('password'),
-            
+
         ]);
         $account->save();
         return redirect('/accounts')->with('success', 'Account Create Successfuly');

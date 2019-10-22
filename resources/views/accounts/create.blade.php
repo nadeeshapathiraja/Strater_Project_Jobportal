@@ -38,12 +38,13 @@
             <input type="password" class="form-control" name="password"/>
         </div>
 
-        {{-- <div class="form-group">
+        <div class="form-group">
             <label for="password">Confirm Password:</label>
-            <input type="password" class="form-control" name="password_confirmation" value={{ $account->password_confirmation }}/>
-        </div> --}}
+            <input type="password" class="form-control" name="password_confirmation" />
+        </div>
 
           <button type="submit" class="btn btn-primary-outline">Submit</button>
+          <div><p class="text-center">Have an account? <a href="">Log In</a> </p></div>
       </form>
   </div>
 </div>
