@@ -17,7 +17,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('candidateprofiles.store') }}">
+      <form method="post" action="{{ route('candidateprofiles.store') }}" enctype="multipart/form-data">
         @csrf                                                                                                                
           {{-- {{ csrf_field() }} --}}
           

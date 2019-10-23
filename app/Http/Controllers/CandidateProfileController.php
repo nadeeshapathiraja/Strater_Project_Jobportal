@@ -27,6 +27,12 @@ class CandidateprofileController extends Controller
          ]);
 
     $image = $request->file('image');
+    return $image;
+
+    $image->move(
+        base_path()."public/images/candidate", 'final_file'
+
+    );
 
     $candidateprofile = new candidateprofile([
 

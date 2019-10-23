@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class AccountController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+
     public function index()
     {
         $accounts = account::all();
@@ -24,12 +29,6 @@ class AccountController extends Controller
             'email' => 'required',
             'password' => 'required|confirmed|min:6',
         ]);
-
-        $validator = Validator::make($request->all(), []);
-
-        $validator->sometimes('email', 'unique:users,email', function ($input) {
-            return $input->email !== Auth::user()->email;
-        });
 
         $account = new account([
             'first_name' => $request->get('first_name'),

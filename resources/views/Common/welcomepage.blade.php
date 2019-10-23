@@ -21,17 +21,21 @@
 				<div class="col-md-3">
 					<img src="../../images/logo.png" style="width:200px;height:80px; ">
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-6">
 					
 				</div>
-				<div class="col-md-2">
-
-					<a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-					</a>
-						
+				<div class="col-md-3">
+						<div class="top-right links">
+								@auth
+									<a href="{{ url('/home') }}">Home</a>
+								@else
+									<a href="{{ route('login') }}">Login</a>
+			
+									@if (Route::has('register'))
+										<a href="{{ route('register') }}">Register</a>
+									@endif
+								@endauth
+							</div>
 				</div>
 			</div>
 
