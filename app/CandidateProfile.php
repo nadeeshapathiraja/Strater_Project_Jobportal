@@ -44,6 +44,6 @@ class candidateprofile extends Model
         'acc_name',
         'acc_no',
         'bank',
-        
+
     ];
 }
